@@ -1,205 +1,225 @@
 <html>
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alviya's Portfolio</title>
 
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        html{
+            scroll-behavior:smooth;
         }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0f1a, #240046);
-            color: white;
-        }
-
-       
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            margin-top: 10px;
-            color: #bbbbbb;
-        }
-
-        .hero button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            border: none;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            color: white;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .hero button:hover {
-            transform: scale(1.05);
+        body{
+            font-family:'Poppins', sans-serif;
+            background:#0f0f1a;
+            color:white;
+            overflow-x:hidden;
         }
 
         
-        section {
-            padding: 50px;
-            margin: 20px;
-            background: rgba(255,255,255,0.07);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
+        .navbar{
+            background:rgba(0,0,0,0.4);
+            backdrop-filter:blur(10px);
         }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
+        .navbar-brand{
+            font-size:28px;
+            font-weight:700;
+            color:#ff4fd8 !important;
         }
 
-        .filters {
-            text-align: center;
-            margin-bottom: 20px;
+        .nav-link{
+            color:white !important;
+            margin-left:20px;
+            transition:0.3s;
         }
 
-        .filters input {
-            display: none;
-        }
-
-        .filters label {
-            padding: 10px 20px;
-            margin: 5px;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .filters label:hover {
-            transform: scale(1.1);
+        .nav-link:hover{
+            color:#ff4fd8 !important;
         }
 
         
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            background:
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+            url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
         }
 
-        .item {
-            overflow: hidden;
-            border-radius: 15px;
+        .hero h1{
+            font-size:70px;
+            font-weight:700;
         }
 
-        .gallery img {
-            width: 100%;
-            transition: 0.4s;
+        .hero span{
+            color:#ff4fd8;
         }
 
-        .gallery img:hover {
-            transform: scale(1.1);
+        .hero p{
+            color:#dddddd;
+            margin-top:15px;
+            font-size:20px;
         }
 
-        
-        #logos:checked ~ .gallery .poster,
-        #logos:checked ~ .gallery .social {
-            display: none;
+        .custom-btn{
+            background:linear-gradient(45deg,#ff006e,#8338ec);
+            border:none;
+            color:white;
+            padding:14px 35px;
+            border-radius:30px;
+            font-size:18px;
+            transition:0.4s;
         }
 
-        #posters:checked ~ .gallery .logo,
-        #posters:checked ~ .gallery .social {
-            display: none;
-        }
-
-        #all:checked ~ .gallery .item {
-            display: block;
-        }
-
-       
-        .slider {
-            overflow: hidden;
-        }
-
-        .slides {
-            display: flex;
-            width: 300%;
-            animation: slide 9s infinite;
-        }
-
-        .slide {
-            width: 100%;
-            text-align: center;
-            padding: 30px;
-            background: rgba(0,0,0,0.4);
-            border-radius: 15px;
-        }
-
-        @keyframes slide {
-            0% {margin-left: 0;}
-            33% {margin-left: -100%;}
-            66% {margin-left: -200%;}
-        }
-        form {
-            max-width: 400px;
-            margin: auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 12px;
-            width: 100%;
-            background: linear-gradient(45deg, #ff006e, #8338ec);
-            border: none;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            transform: scale(1.05);
+        .custom-btn:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 20px #ff4fd8;
         }
 
         
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #bbbbbb;
+        section{
+            padding:100px 0;
         }
 
-       
-        @media (max-width: 768px) {
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
+        .section-title{
+            text-align:center;
+            margin-bottom:60px;
+        }
+
+        .section-title h2{
+            font-size:45px;
+            font-weight:700;
+        }
+
+        .section-title p{
+            color:#bbbbbb;
+        }
+
+        
+        .card{
+            background:#1a1a2e;
+            border:none;
+            border-radius:20px;
+            overflow:hidden;
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 25px rgba(255,0,110,0.5);
+        }
+
+        .card img{
+            height:250px;
+            object-fit:cover;
+        }
+
+        
+        .card-body{
+            background:#1a1a2e;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .card-body h5{
+            font-weight:600;
+            color:white;
+        }
+
+        
+        .testimonial-card{
+            background:#1a1a2e;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+        }
+
+        .testimonial-card i{
+            font-size:40px;
+            color:#ff4fd8;
+        }
+
+        .testimonial-card p{
+            margin-top:20px;
+            color:#cccccc;
+        }
+
+        
+        .contact-box{
+            background:#1a1a2e;
+            padding:50px;
+            border-radius:20px;
+        }
+
+        .form-control{
+    background:#1a1a2e;
+    border:1px solid #8338ec;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+}
+
+.form-control::placeholder{
+    color:#cccccc;
+}
+
+.form-control:focus{
+    background:#1a1a2e;
+    color:white;
+    border-color:#ff4fd8;
+    box-shadow:0 0 10px #8338ec;
+}
+        .form-control:focus{
+            background:#111122;
+            color:white;
+            box-shadow:0 0 10px #8338ec;
+        }
+
+        
+        footer{
+            background:#111122;
+            text-align:center;
+            padding:20px;
+            color:#aaaaaa;
+        }
+
+        
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:45px;
             }
-        }
 
-        @media (max-width: 480px) {
-            .gallery {
-                grid-template-columns: 1fr;
+            .hero p{
+                font-size:16px;
             }
 
-            .hero h1 {
-                font-size: 30px;
+            .section-title h2{
+                font-size:35px;
             }
         }
 
@@ -207,66 +227,346 @@
 </head>
 
 <body>
-<div class="hero">
-    <h1>Alviya's Designs</h1>
-    <p>Creative Graphic Designer | Logos • Posters • Social Media</p>
 
-       <a href="#work">
-        <button>View My Work</button>
-    </a>
-</div>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
-<section id="work">
-    <h2>My Work</h2>
+        <div class="container">
 
-    <div class="filters">
-        <input type="radio" name="filter" id="all" checked>
-        <label for="all">All</label>
+            <a class="navbar-brand" href="#">
+                Alviya
+            </a>
 
-        <input type="radio" name="filter" id="logos">
-        <label for="logos">Logos</label>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu">
 
-        <input type="radio" name="filter" id="posters">
-        <label for="posters">Posters</label>
-    </div>
+                <span class="navbar-toggler-icon"></span>
 
-    <div class="gallery">
-        <div class="item logo"><img src="logo1.jpg"></div>
-        <div class="item poster"><img src="poster1.jpeg"></div>
-        <div class="item social"><img src="social1.jpeg"></div>
+            </button>
 
-        <div class="item logo"><img src="logo2.jpg"></div>
-        <div class="item poster"><img src="poster2.jpeg"></div>
-        <div class="item social"><img src="social2.jpeg"></div>
-    </div>
-</section>
+            <div class="collapse navbar-collapse" id="menu">
 
-<section>
-    <h2>Testimonials</h2>
+                <ul class="navbar-nav ms-auto">
 
-    <div class="slider">
-        <div class="slides">
-            <div class="slide">"Amazing work!" - Client A</div>
-            <div class="slide">"Very professional!" - Client B</div>
-            <div class="slide">"Loved the designs!" - Client C</div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
-    </div>
-</section>
 
-<section>
-    <h2>Contact Me</h2>
+    </nav>
 
-    <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button>Send Message</button>
-    </form>
-</section>
+    
+    <section class="hero" id="home">
 
-<footer>
-    © 2026 Alviya Designs
-</footer>
+        <div class="container">
+
+            <h1>
+                Hi, I'm <span>Alviya</span>
+            </h1>
+
+            <p>
+                Creative Graphic Designer Creating Modern Logos,
+                Posters & Social Media Designs
+            </p>
+
+            <a href="#work">
+                <button class="btn custom-btn mt-4">
+                    Explore My Work
+                </button>
+            </a>
+
+        </div>
+
+    </section>
+
+    
+    <section id="work">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>My Creative Work</h2>
+
+                <p>
+                    Some of my latest professional design projects
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <img src="logo1.jpg" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5>Modern Logo Design</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <img src="poster1.jpeg" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5>Creative Poster</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <img src="social1.jpeg" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5>Social Media Design</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <img src="logo2.jpg" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5>Business Branding</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <img src="poster2.jpeg" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5>Event Poster</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="col-md-4">
+
+                    <div class="card">
+
+                        <img src="social2.jpeg" class="card-img-top">
+
+                        <div class="card-body">
+
+                            <h5>Instagram Post Design</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="testimonials">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Client Testimonials</h2>
+
+                <p>
+                    What clients say about my work
+                </p>
+
+            </div>
+
+            <div id="testimonialSlider"
+                 class="carousel slide"
+                 data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+
+                    
+                    <div class="carousel-item active">
+
+                        <div class="testimonial-card">
+
+                            <i class="bi bi-quote"></i>
+
+                            <p>
+                                Amazing creativity and professional work.
+                                Highly recommended!
+                            </p>
+
+                            <h5>- Client A</h5>
+
+                        </div>
+
+                    </div>
+
+                    
+                    <div class="carousel-item">
+
+                        <div class="testimonial-card">
+
+                            <i class="bi bi-quote"></i>
+
+                            <p>
+                                Delivered exactly what I imagined.
+                                Very talented designer.
+                            </p>
+
+                            <h5>- Client B</h5>
+
+                        </div>
+
+                    </div>
+
+                    
+                    <div class="carousel-item">
+
+                        <div class="testimonial-card">
+
+                            <i class="bi bi-quote"></i>
+
+                            <p>
+                                Beautiful designs with modern aesthetics.
+                                Loved the final result.
+                            </p>
+
+                            <h5>- Client C</h5>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contact Me</h2>
+
+                <p>
+                    Let's work together on your next project
+                </p>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-8">
+
+                    <div class="contact-box">
+
+                        <form>
+
+                            <input type="text"
+                                   class="form-control mb-4"
+                                   placeholder="Your Name">
+
+                            <input type="email"
+                                   class="form-control mb-4"
+                                   placeholder="Your Email">
+
+                            <textarea class="form-control mb-4"
+                                      rows="5"
+                                      placeholder="Your Message"></textarea>
+
+                            <button class="btn custom-btn w-100">
+                                Send Message
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <footer>
+
+        © 2026 Alviya Designs | All Rights Reserved
+
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
